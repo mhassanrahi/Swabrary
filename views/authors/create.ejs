@@ -2,16 +2,7 @@
     <div class="col-12 col-md-6 offset-md-3">
         <h3 class="border-bottom text-center text-primary">Add Author</h3>
         <form action="/author/store" method="POST">
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Add</button>
-            <a href="/author" class="btn btn-warning"> Cancel</a>
+            <%- include('./_form_fields') %>
         </form>
     </div>
 
