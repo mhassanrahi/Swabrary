@@ -1,0 +1,10 @@
+<div class="row my-4">
+    <div class="col-12 col-md-6 offset-md-3">
+        <h3 class="border-bottom text-center text-primary">Add Book</h3>
+        <form action="/book/store" method="POST" enctype="multipart/form-data">
+            <%- include('./_form_fields') %>
+        </form>
+        <%- include('../partials/errorMsg') %>
+    </div>
+
+</div>
