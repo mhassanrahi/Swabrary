@@ -14,7 +14,9 @@ const uploadPath = path.join('public', Book.coverImageBasePath)
 
 
 // default options
-router.use(fileUpload());
+router.use(fileUpload({
+    createParentPath: true
+}));
 
 
 router.get('/', async(req, res) => {
@@ -24,7 +26,7 @@ router.get('/', async(req, res) => {
     }
 
     try {
-        const books = await query.exec()
+        const books = await query.sort({ createdAt: 'desc' }).exec()
         res.render('books/index', {
             books: books,
             searchOptions: req.query
